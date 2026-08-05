@@ -1,0 +1,30 @@
+{
+   "name": "typescratch-block",
+   "version": "0.1.0",
+   "description": "A TypeScript API for constructing Scratch project.json files programmatically.",
+   "author": "dvd777yt",
+   "license": "MIT",
+   "type": "module",
+   "main": "dist/index.js",
+   "module": "dist/index.js",
+   "types": "dist/index.d.ts",
+   "sideEffects": false,
+   "scripts": {
+      "build": "tsc -p tsconfig.json",
+      "dev": "tsc -w",
+      "clean": "rm -rf dist"
+   },
+   "exports": {
+      ".": {
+         "types": "./dist/index.d.ts",
+         "import": "./dist/index.js"
+      }
+   },
+   "files": [
+      "dist"
+   ],
+   "devDependencies": {
+      "prettier-plugin-sort-imports": "^1.8.11",
+      "typescript": "^5.6.0"
+   }
+}
