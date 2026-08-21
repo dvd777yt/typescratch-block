@@ -1,9 +1,7 @@
-let idCounter = 0;
-
 export type BlockID = string & { __brand: "BlockID" };
 
 export function generateRandomBlockId(): BlockID {
-   idCounter++;
-   const id = idCounter.toString(36) + Math.random().toString(36).slice(2, 4);
-   return id as BlockID;
+   const arr = new Uint32Array(3);
+   crypto.getRandomValues(arr);
+   return (BigInt(arr[0]) << 64n | BigInt(arr[1]) << 32n | BigInt(arr[2])).toString(36) as BlockID;
 }
